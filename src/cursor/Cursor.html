@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head> </head>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var X = Y = 0;
+
+    function move() {
+        document.getElementById('x').style.left = X + 'px';
+        document.getElementById('x').style.top = Y + 'px';
+    }
+    document.addEventListener("mousemove", function (e) {
+    X = e.pageX;
+    Y = e.pageY;
+    }, false);
+
+    setInterval(move, 100);
+    });
+</script>
+<style>
+    #x {
+    width:50px;
+    height:50px;
+    background: url(uni.png) no-repeat;
+    background-size:50px 40px;
+    margin:-25px 0 0 -25px;
+    position:absolute;
+    }
+</style>
+</head>
+<body background="hm.jpg">
+<div id="x"></div>
+</body>
+</html>

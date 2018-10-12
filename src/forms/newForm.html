@@ -1,0 +1,33 @@
+<html>
+<head>
+    <script type="text/javascript">
+    function validate(){
+    var x=document.forms["form"]["pass"].value;
+    var y=document.forms["form"]["email"].value;
+    if (x.length < 5 ){
+      document.getElementById("passf").innerHTML="*Password should be more than 5 symbols";
+      return false;
+    }
+    at=y.indexOf("@");
+    dot=y.indexOf(".");
+    if (at<1 || dot <1){
+      document.getElementById("emailf").innerHTML="*enter the right email address";
+      return false;
+   }
+}
+</script>
+</head>
+<body>
+<form name="form" onsubmit="return validate()">
+    e-mail: <input type="text"
+                   required
+                   name="email">
+    <span style="color:red" id="emailf"></span>
+    password <input type="password"
+                    name="pass"
+                    required>
+    <span style="color:red" id="passf"></span><br />
+    <br/><input type="submit" value="Submit">
+</form>
+</body>
+</html>
